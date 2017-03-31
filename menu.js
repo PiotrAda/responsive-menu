@@ -1,24 +1,29 @@
-
-// Funkcja uruchamia się wraz z wyświetleniem strony;
 $(document).ready(function() {
-
   // Hover w jQuery nadaje dwa atrybuty - pierwszy to najechanie myszką na obiekt a drugi to zjechanie myszką z obiektu;
-    $( '.dropdown' ).hover(
+  $('.first-dropdown').hover(
 
-      // Po najechaniu - slideDown - to zmienia display na 'block';
-        function(){
-            $(this).children('.submenu').finish();
-            $(this).children('.submenu').slideDown(100, stop());
-        },
-
-      // Po opuszczeniu - slideUp to zmienia display na 'none';
-        function(){
-            $(this).children('.submenu').finish();
-            $(this).children('.submenu').slideUp(100, stop());
-        }
-    );
-    function stop(){
-    $('.sub-menu').stop(true, true);
+    // Po najechaniu - slideDown - to zmienia display na 'block';
+    function(){
+      $(this).children('.first-level').finish();
+      $(this).children('.first-level').slideDown(200, stop());
+    },
+    // Po opuszczeniu - slideUp to zmienia display na 'none';
+    function(){
+      $(this).children('.first-level').finish();
+      $(this).children('.first-level').slideUp(100, stop());
     }
-// Kończy '$(document).ready'
+  );
+
+  $('.second-dropdown').hover(
+    // Po najechaniu - slideDown - to zmienia display na 'block';
+    function(){
+      $(this).children('.second-level').finish();
+      $(this).children('.second-level').slideDown(300, stop());
+    },
+    // Po opuszczeniu - slideUp to zmienia display na 'none';
+    function(){
+      $(this).children('.second-level').finish();
+      $(this).children('.second-level').slideUp(100, stop());
+    }
+  );
 });
